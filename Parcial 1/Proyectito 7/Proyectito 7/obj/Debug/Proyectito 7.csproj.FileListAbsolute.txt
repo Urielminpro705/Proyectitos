@@ -1,0 +1,8 @@
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 7\Proyectito 7\bin\Debug\Proyectito 7.exe.config
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 7\Proyectito 7\bin\Debug\Proyectito 7.exe
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 7\Proyectito 7\bin\Debug\Proyectito 7.pdb
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 7\Proyectito 7\obj\Debug\Proyectito 7.csproj.AssemblyReference.cache
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 7\Proyectito 7\obj\Debug\Proyectito 7.csproj.SuggestedBindingRedirects.cache
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 7\Proyectito 7\obj\Debug\Proyectito 7.csproj.CoreCompileInputs.cache
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 7\Proyectito 7\obj\Debug\Proyectito 7.exe
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 7\Proyectito 7\obj\Debug\Proyectito 7.pdb

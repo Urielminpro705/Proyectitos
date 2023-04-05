@@ -1,0 +1,8 @@
+C:\Users\uriel\source\repos\Proyectito\Proyectito\bin\Debug\Proyectito.exe.config
+C:\Users\uriel\source\repos\Proyectito\Proyectito\bin\Debug\Proyectito.exe
+C:\Users\uriel\source\repos\Proyectito\Proyectito\bin\Debug\Proyectito.pdb
+C:\Users\uriel\source\repos\Proyectito\Proyectito\obj\Debug\Proyectito.csproj.AssemblyReference.cache
+C:\Users\uriel\source\repos\Proyectito\Proyectito\obj\Debug\Proyectito.csproj.SuggestedBindingRedirects.cache
+C:\Users\uriel\source\repos\Proyectito\Proyectito\obj\Debug\Proyectito.csproj.CoreCompileInputs.cache
+C:\Users\uriel\source\repos\Proyectito\Proyectito\obj\Debug\Proyectito.exe
+C:\Users\uriel\source\repos\Proyectito\Proyectito\obj\Debug\Proyectito.pdb

@@ -1,0 +1,8 @@
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito 2\2P-Proyectito 2\bin\Debug\2P-Proyectito 2.exe.config
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito 2\2P-Proyectito 2\bin\Debug\2P-Proyectito 2.exe
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito 2\2P-Proyectito 2\bin\Debug\2P-Proyectito 2.pdb
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito 2\2P-Proyectito 2\obj\Debug\2P-Proyectito 2.csproj.AssemblyReference.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito 2\2P-Proyectito 2\obj\Debug\2P-Proyectito 2.csproj.SuggestedBindingRedirects.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito 2\2P-Proyectito 2\obj\Debug\2P-Proyectito 2.csproj.CoreCompileInputs.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito 2\2P-Proyectito 2\obj\Debug\2P-Proyectito 2.exe
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito 2\2P-Proyectito 2\obj\Debug\2P-Proyectito 2.pdb

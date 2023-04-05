@@ -1,0 +1,16 @@
+C:\Users\uriel\source\repos\Proyectito2\Proyectito2\bin\Debug\Proyectito2.exe.config
+C:\Users\uriel\source\repos\Proyectito2\Proyectito2\bin\Debug\Proyectito2.exe
+C:\Users\uriel\source\repos\Proyectito2\Proyectito2\bin\Debug\Proyectito2.pdb
+C:\Users\uriel\source\repos\Proyectito2\Proyectito2\obj\Debug\Proyectito2.csproj.AssemblyReference.cache
+C:\Users\uriel\source\repos\Proyectito2\Proyectito2\obj\Debug\Proyectito2.csproj.SuggestedBindingRedirects.cache
+C:\Users\uriel\source\repos\Proyectito2\Proyectito2\obj\Debug\Proyectito2.csproj.CoreCompileInputs.cache
+C:\Users\uriel\source\repos\Proyectito2\Proyectito2\obj\Debug\Proyectito2.exe
+C:\Users\uriel\source\repos\Proyectito2\Proyectito2\obj\Debug\Proyectito2.pdb
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito2\Proyectito2\bin\Debug\Proyectito2.exe.config
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito2\Proyectito2\bin\Debug\Proyectito2.exe
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito2\Proyectito2\bin\Debug\Proyectito2.pdb
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito2\Proyectito2\obj\Debug\Proyectito2.csproj.AssemblyReference.cache
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito2\Proyectito2\obj\Debug\Proyectito2.csproj.SuggestedBindingRedirects.cache
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito2\Proyectito2\obj\Debug\Proyectito2.csproj.CoreCompileInputs.cache
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito2\Proyectito2\obj\Debug\Proyectito2.exe
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito2\Proyectito2\obj\Debug\Proyectito2.pdb

@@ -1,0 +1,8 @@
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 9v2\Proyectito 9v2\bin\Debug\Proyectito 9v2.exe.config
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 9v2\Proyectito 9v2\bin\Debug\Proyectito 9v2.exe
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 9v2\Proyectito 9v2\bin\Debug\Proyectito 9v2.pdb
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 9v2\Proyectito 9v2\obj\Debug\Proyectito 9v2.csproj.AssemblyReference.cache
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 9v2\Proyectito 9v2\obj\Debug\Proyectito 9v2.csproj.SuggestedBindingRedirects.cache
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 9v2\Proyectito 9v2\obj\Debug\Proyectito 9v2.csproj.CoreCompileInputs.cache
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 9v2\Proyectito 9v2\obj\Debug\Proyectito 9v2.exe
+C:\Uriel\Universidad\Segundo semestre\Primer parcial\Programacion orientada a entornos visuales\Programas\Proyectito 9v2\Proyectito 9v2\obj\Debug\Proyectito 9v2.pdb

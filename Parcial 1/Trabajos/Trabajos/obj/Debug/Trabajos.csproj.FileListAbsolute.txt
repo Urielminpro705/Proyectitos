@@ -1,0 +1,8 @@
+C:\Users\uriel\source\repos\Trabajos\Trabajos\bin\Debug\Trabajos.exe.config
+C:\Users\uriel\source\repos\Trabajos\Trabajos\bin\Debug\Trabajos.exe
+C:\Users\uriel\source\repos\Trabajos\Trabajos\bin\Debug\Trabajos.pdb
+C:\Users\uriel\source\repos\Trabajos\Trabajos\obj\Debug\Trabajos.csproj.AssemblyReference.cache
+C:\Users\uriel\source\repos\Trabajos\Trabajos\obj\Debug\Trabajos.csproj.SuggestedBindingRedirects.cache
+C:\Users\uriel\source\repos\Trabajos\Trabajos\obj\Debug\Trabajos.csproj.CoreCompileInputs.cache
+C:\Users\uriel\source\repos\Trabajos\Trabajos\obj\Debug\Trabajos.exe
+C:\Users\uriel\source\repos\Trabajos\Trabajos\obj\Debug\Trabajos.pdb

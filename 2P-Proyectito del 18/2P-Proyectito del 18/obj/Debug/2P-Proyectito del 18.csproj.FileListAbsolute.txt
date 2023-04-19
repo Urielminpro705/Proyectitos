@@ -1,0 +1,8 @@
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito del 18\2P-Proyectito del 18\bin\Debug\2P-Proyectito del 18.exe.config
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito del 18\2P-Proyectito del 18\bin\Debug\2P-Proyectito del 18.exe
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito del 18\2P-Proyectito del 18\bin\Debug\2P-Proyectito del 18.pdb
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito del 18\2P-Proyectito del 18\obj\Debug\2P-Proyectito del 18.csproj.AssemblyReference.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito del 18\2P-Proyectito del 18\obj\Debug\2P-Proyectito del 18.csproj.SuggestedBindingRedirects.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito del 18\2P-Proyectito del 18\obj\Debug\2P-Proyectito del 18.csproj.CoreCompileInputs.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito del 18\2P-Proyectito del 18\obj\Debug\2P-Proyectito del 18.exe
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Proyectito del 18\2P-Proyectito del 18\obj\Debug\2P-Proyectito del 18.pdb

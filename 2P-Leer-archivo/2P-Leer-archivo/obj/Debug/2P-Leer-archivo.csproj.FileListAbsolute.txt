@@ -1,0 +1,8 @@
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Leer-archivo\2P-Leer-archivo\bin\Debug\2P-Leer-archivo.exe.config
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Leer-archivo\2P-Leer-archivo\bin\Debug\2P-Leer-archivo.exe
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Leer-archivo\2P-Leer-archivo\bin\Debug\2P-Leer-archivo.pdb
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Leer-archivo\2P-Leer-archivo\obj\Debug\2P-Leer-archivo.csproj.AssemblyReference.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Leer-archivo\2P-Leer-archivo\obj\Debug\2P-Leer-archivo.csproj.SuggestedBindingRedirects.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Leer-archivo\2P-Leer-archivo\obj\Debug\2P-Leer-archivo.csproj.CoreCompileInputs.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Leer-archivo\2P-Leer-archivo\obj\Debug\2P-Leer-archivo.exe
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\2P-Leer-archivo\2P-Leer-archivo\obj\Debug\2P-Leer-archivo.pdb

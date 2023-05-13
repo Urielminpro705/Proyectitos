@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gato"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="MainWindow" Height="450" Width="850" MinHeight="450" MinWidth="800">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/fondo.png"/>
@@ -24,30 +24,43 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Column="0" Grid.Row="1">
-            <Grid.Background>
-                <ImageBrush/>
-            </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-
-            <Image Grid.Row="0" Source="C:\Users\uriel\Documents\Urielito\Escuela\Uni\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\Gato\Gato\Imagenes\post3.png" Margin="10"></Image>
         </Grid>
 
         <Grid Grid.Column="1" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Height="110" Width="110"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Height="110" Width="110"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4" Height="110" Width="110"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Height="110" Width="110"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Height="110" Width="110"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="4" Height="110" Width="110"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Height="110" Width="110"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" Height="110" Width="110"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="4" Height="110" Width="110"/>
+            <Rectangle HorizontalAlignment="Center" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Center" Width="10" Height="400" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5"/>
+            <Rectangle HorizontalAlignment="Center" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Center" Width="10" Height="400" Grid.Column="3" Grid.Row="0" Grid.RowSpan="5"/>
+            <Rectangle HorizontalAlignment="Center" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Center" Width="400" Height="10" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>
+            <Rectangle HorizontalAlignment="Center" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Center" Width="400" Height="10" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="5"/>
+
         </Grid>
     </Grid>
 </Window>

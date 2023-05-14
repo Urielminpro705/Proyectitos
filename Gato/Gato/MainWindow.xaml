@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gato"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="850" MinHeight="450" MinWidth="800">
+        Title="TicTacToe" Height="450" Width="850" MinHeight="450" MinWidth="850">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/fondo.png"/>
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -26,9 +26,37 @@
         <Grid Grid.Column="0" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
+            <Image Source="/Titulo.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="0"/>
+
+            <Grid Grid.Column="0" Grid.Row="1">
+                
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Post5.png"/>
+                    </Grid.Background>
+                    
+                    <Border Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="TextBox" BorderThickness="0" BorderBrush="Transparent" Margin="1"/>
+                    </Border>
+                </Grid>
+            </Grid>
+
         </Grid>
 
         <Grid Grid.Column="1" Grid.Row="1">
@@ -47,19 +75,19 @@
                 <RowDefinition Height="10"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Height="110" Width="110"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Height="110" Width="110"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4" Height="110" Width="110"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Height="110" Width="110"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Height="110" Width="110"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="4" Height="110" Width="110"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Height="110" Width="110"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" Height="110" Width="110"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="4" Height="110" Width="110"/>
-            <Rectangle HorizontalAlignment="Center" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Center" Width="10" Height="400" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5"/>
-            <Rectangle HorizontalAlignment="Center" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Center" Width="10" Height="400" Grid.Column="3" Grid.Row="0" Grid.RowSpan="5"/>
-            <Rectangle HorizontalAlignment="Center" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Center" Width="400" Height="10" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>
-            <Rectangle HorizontalAlignment="Center" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Center" Width="400" Height="10" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="5"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Height="110" Width="110" Visibility="Collapsed"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Height="110" Width="110" Visibility="Collapsed"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4" Height="110" Width="110" Visibility="Collapsed"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Height="110" Width="110" Visibility="Collapsed"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Height="110" Width="110" Visibility="Collapsed"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="4" Height="110" Width="110" Visibility="Collapsed"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Height="110" Width="110" Visibility="Collapsed"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" Height="110" Width="110" Visibility="Collapsed"/>
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="4" Height="110" Width="110" Visibility="Collapsed"/>
+            <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5"/>
+            <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="3" Grid.Row="0" Grid.RowSpan="5"/>
+            <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>
+            <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="5"/>
 
         </Grid>
     </Grid>

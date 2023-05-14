@@ -31,7 +31,7 @@
             <Image Source="/Titulo.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="0"/>
 
             <Grid Grid.Column="0" Grid.Row="1">
-                
+
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -41,19 +41,39 @@
 
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0.2*"/>
-                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
                     <Grid.Background>
                         <ImageBrush ImageSource="/Post5.png"/>
                     </Grid.Background>
-                    
+
                     <Border Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
-                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="TextBox" BorderThickness="0" BorderBrush="Transparent" Margin="1"/>
+                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Text="Jugador 1" BorderThickness="0" BorderBrush="Transparent" Margin="1" TextAlignment="Left"/>
                     </Border>
+                    <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Text="Jugador 2" BorderThickness="0" BorderBrush="Transparent" Margin="1" TextAlignment="Left"/>
+                    </Border>
+                    <Border Grid.Row="1"  Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1" BorderBrush="Transparent" BorderThickness="0" Background="White">
+                            <ComboBoxItem Content="X"/>
+                            <ComboBoxItem Content="O"/>
+                        </ComboBox>
+                    </Border>
+                    
+                    <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="JUGADOR 1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0"/>
+                    <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="JUGADOR 2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0"/>
                 </Grid>
             </Grid>
 
@@ -75,15 +95,15 @@
                 <RowDefinition Height="10"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Height="110" Width="110" Visibility="Collapsed"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Height="110" Width="110" Visibility="Collapsed"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4" Height="110" Width="110" Visibility="Collapsed"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Height="110" Width="110" Visibility="Collapsed"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Height="110" Width="110" Visibility="Collapsed"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="4" Height="110" Width="110" Visibility="Collapsed"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Height="110" Width="110" Visibility="Collapsed"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" Height="110" Width="110" Visibility="Collapsed"/>
-            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="4" Height="110" Width="110" Visibility="Collapsed"/>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Height="110" Width="110" Click="boton" Background="Transparent" BorderThickness="0" Name="a1"/>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Height="110" Width="110" Click="boton" Background="Transparent" BorderThickness="0" Name="a2"/>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4" Height="110" Width="110" Click="boton" Background="Transparent" BorderThickness="0" Name="a3"/>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Height="110" Width="110" Click="boton" Background="Transparent" BorderThickness="0" Name="b1"/>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Height="110" Width="110" Click="boton" Background="Transparent" BorderThickness="0" Name="b2"/>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="4" Height="110" Width="110" Click="boton" Background="Transparent" BorderThickness="0" Name="b3"/>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Height="110" Width="110" Click="boton" Background="Transparent" BorderThickness="0" Name="c1"/>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" Height="110" Width="110" Click="boton" Background="Transparent" BorderThickness="0" Name="c2"/>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="4" Height="110" Width="110" Click="boton" Background="Transparent" BorderThickness="0" Name="c3"/>
             <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5"/>
             <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="3" Grid.Row="0" Grid.RowSpan="5"/>
             <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>

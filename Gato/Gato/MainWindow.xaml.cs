@@ -20,9 +20,21 @@ namespace Gato
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int turnos;
+        private String j1;
+        private String j2;
+        private int[,] cuadricula=new int[3,3];
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        private void boton(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("¡Hola! Has hecho clic en el botón.");
+        }
+
+
     }
 }

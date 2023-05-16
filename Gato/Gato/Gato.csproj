@@ -96,6 +96,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Imagenes\FotoXD.jpg" />
     <Resource Include="Imagenes\Post7.png" />
     <Resource Include="Imagenes\Boton.png" />
     <Resource Include="Imagenes\Boton2.png" />
@@ -123,16 +124,22 @@
     <Resource Include="Imagenes\Equis2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\GanadorRojo.png" />
+    <Resource Include="Imagenes\Empate.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\GanadorVerde.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Empate.png" />
+    <Resource Include="Imagenes\GanadorRojo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Icono.png" />
+    <Resource Include="Imagenes\TurnoVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\TurnoRojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Icono.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

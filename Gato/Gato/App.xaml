@@ -6,7 +6,7 @@
     <Application.Resources>
 
         <Style TargetType="Window">
-            <Setter Property="Icon" Value="/Imagenes/Icono.png"/>
+            <Setter Property="Icon" Value="/Imagenes/Icono.ico"/>
         </Style>
         
         <Style x:Key="FocusVisual">

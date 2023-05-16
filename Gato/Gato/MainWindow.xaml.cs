@@ -23,24 +23,26 @@ namespace Gato
         private String fichasLetras;
         private int ficha;
         private Boolean turnos=true;
+        private Boolean fin=true;
         private Boolean sePuedeJugar=false;
-        private Boolean fin=false;
         private int contador=0;      
         private int[,] cuadricula=new int[3,3];
         private Jugador j1 = new Jugador();
         private Jugador j2 = new Jugador();
-        private Jugador ganador = new Jugador();
         
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        //Funcion que se activa cada vez que se presiona un boton de la cuadricula
         private void boton(object sender, RoutedEventArgs e)
         {
-            Button boton = sender as Button;               
+            Button boton = sender as Button;
+            //Se comprueba si aun sigue el juego y si aun no se presionan todos los botones
             if (contador < 9 && sePuedeJugar == true)
             {
+                //Este if le asigan datos a las variables necesarias dependiendo de quien sea el turno
                 if (turnos == true)
                 {
                     ficha = j1.ficha;
@@ -50,19 +52,25 @@ namespace Gato
                 {
                     ficha = j2.ficha;
                     fichasLetras = j2.fichaLetras;
-                }
+                }                
 
+                //Este if sirve para sabes de que ficha va a ser el boton dependiendo del turno
                 if (ficha == 1)
                 {
                     boton.Background = Brushes.LightGreen;
+                    turnoRojo.Visibility = Visibility.Visible;
+                    turnoVerde.Visibility = Visibility.Hidden;
                 }
                 else
                 {
+                    turnoVerde.Visibility = Visibility.Visible;
+                    turnoRojo.Visibility = Visibility.Hidden;
+
                     boton.Background = Brushes.OrangeRed;
                 }
                 boton.IsEnabled = false;
                 boton.Content = fichasLetras;
-
+                //El switch sirve para recrear la cuadricula dentro de un arreglo bidimensional
                 switch (boton.Name)
                 {
                     case "a1":                        
@@ -102,17 +110,19 @@ namespace Gato
                         break;
                 }                               
                 contador++;
-                fin = seAcabo();
+                fin=seAcabo();
                 turnos = !turnos;
             }
             
         }
 
+        //Esta funcion sirve para comprobar si alguien ya gano el juego, o si quedaron empate
         public Boolean seAcabo()
         {
             Boolean fin = false;
             int fichaComun = 0;
             int juntas=1;
+            //Este for analiza las 3 columnas
             for (int r = 0; r < 3 && juntas < 3; r++)
             {
                 for (int j = 0; j < 2 && juntas < 3; j++)
@@ -134,8 +144,7 @@ namespace Gato
 
             }
 
-
-
+            //Este for analiza las 3 filas
             for (int r = 0; r < 3 && juntas < 3; r++)
             {
                 for (int j = 0; j < 2 && juntas < 3; j++)
@@ -156,6 +165,7 @@ namespace Gato
 
             }
 
+            //Este for analiza la linea diagonal que empieza por la parte superior izquierda
             int g = 0;
             for (int j = 0; j < 2 && juntas < 3; j++)
             {
@@ -174,6 +184,7 @@ namespace Gato
                 }
             }
 
+            //Este for analiza la linea diagonal que empieza por la parte inferior izquierda
             g = 2;
             for (int j = 0; j < 2 && juntas < 3; j++)
             {
@@ -193,8 +204,7 @@ namespace Gato
                 }
             }
             
-
-
+            //Este if analiza cual ficha fue la ganadora
             if(juntas == 3)
             {
                 if(fichaComun == 0)
@@ -203,20 +213,23 @@ namespace Gato
                 }
                 else
                 {
+                    //Al jugador que gane, se le agrega un punto
                     if(fichaComun == j1.ficha)
                     {
                         fin = true;
-                        ganador = j1;
-                        j1.puntos++;
-                        puntos1.Text = j1.puntos.ToString();
-                        puntos2.Text = j2.puntos.ToString();
+                        j1.puntos++;                                                                   
                         sePuedeJugar = false;
+                        //Dependiendo de cual ficha tenga el jugador va a variar el mensaje de ganador
                         if(j1.ficha == 1)
                         {
                             ganaVerde.Visibility= Visibility.Visible;
+                            puntos1.Text = j1.puntos.ToString();
+                            puntos2.Text = j2.puntos.ToString();
                         }
                         else
                         {
+                            puntos1.Text = j2.puntos.ToString();
+                            puntos2.Text = j1.puntos.ToString();
                             ganaRojo.Visibility= Visibility.Visible;
                         }
                         bEmpezar.Visibility = Visibility.Visible;
@@ -226,27 +239,30 @@ namespace Gato
                         if(fichaComun == j2.ficha)
                         {
                             fin = true;
-                            ganador = j2;
                             j2.puntos++;
-                            puntos1.Text = j1.puntos.ToString();
-                            puntos2.Text = j2.puntos.ToString();
+                            
+                            
                             sePuedeJugar = false;
                             if (j2.ficha == 1)
                             {
                                 ganaVerde.Visibility = Visibility.Visible;
+                                puntos1.Text = j2.puntos.ToString();
+                                puntos2.Text = j1.puntos.ToString();
                             }
                             else
                             {
+                                puntos1.Text = j1.puntos.ToString();
+                                puntos2.Text = j2.puntos.ToString();
                                 ganaRojo.Visibility = Visibility.Visible;
                             }
                             bEmpezar.Visibility = Visibility.Visible;
                         }                      
-                    }
-                    
+                    }                 
                 }
             }
             else
             {
+                //Este if sirve para saber si fue empate
                 if (contador >= 9)
                 {
                     fin = true;
@@ -255,59 +271,71 @@ namespace Gato
                     bEmpezar.Visibility = Visibility.Visible;
                 }
             }
-
+            //Se retorna fin, si fin es true significa que ya se acabó el juego
             return fin;
         }
 
+        //Esta funcion sirve para hacer que se asigne al jugador 2 una ficha diferente a la del jugador 1
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {         
             if(opciones.SelectedIndex==0)
-            {
-                Ficha2.Text = "X";
+            {              
+                j1.fichaLetras = "O";
+                j2.fichaLetras = "X";
+                Ficha2.Text = j2.fichaLetras;
+                j1.ficha = 1;
+                j2.ficha = 2;
             }
             else
             {
                 if (opciones.SelectedIndex == 1)
                 {
-                    Ficha2.Text = "O";
+                    j1.fichaLetras = "X";
+                    j2.fichaLetras = "O";
+                    Ficha2.Text = j2.fichaLetras;
+                    j1.ficha = 2;
+                    j2.ficha = 1;
                 }               
             }
         }
 
+        //Esta funcion se activa cuando se presiona el boton de empezar
         private void Empezar(object sender, RoutedEventArgs e)
         {
-            volverAjugar();
+            volverAjugar();          
+            //Se guardan los nombres
             j1.nombre = nombreJ1.Text;
             j2.nombre = nombreJ2.Text;           
             if (opciones.SelectedIndex == 0)
-            {
-                j1.ficha = 1;
-                j2.ficha = 2;
-                j1.fichaLetras = "O";
-                j2.fichaLetras = "X";
+            {                           
                 r1.Text = j1.nombre;
                 r2.Text = j2.nombre;
+                turnoRojo.Visibility = Visibility.Hidden;
+                turnoVerde.Visibility= Visibility.Visible;
             }
             else
             {
                 if (opciones.SelectedIndex == 1)
-                {
-                    j1.ficha = 2;
-                    j2.ficha = 1;
-                    j1.fichaLetras = "X";
-                    j2.fichaLetras = "O";
+                {                                  
                     r1.Text = j2.nombre;
                     r2.Text = j1.nombre;
+                    turnoVerde.Visibility = Visibility.Hidden;
+                    turnoRojo.Visibility = Visibility.Visible;
                 }
             }
+            //Se activa el tablero
             sePuedeJugar = true;
+            //Se activa muestra el boton de reiniciar
             bReiniciar.Visibility = Visibility.Visible;
-            bEmpezar.Visibility = Visibility.Hidden;           
+            //Se esconde el boton de empezar
+            bEmpezar.Visibility = Visibility.Hidden;   
+            //Se deshabilitan las opciones
             opciones.IsEnabled = false;
             nombreJ1.IsEnabled = false;
             nombreJ2.IsEnabled = false;
         }
 
+        //Esta funcion sirve para reiniciar muchos de los elementos a su estado original
         public void volverAjugar()
         {
             turnos = true;
@@ -319,10 +347,7 @@ namespace Gato
                 {
                     cuadricula[j, i] = 0;
                 }
-            }
-            opciones.IsEnabled = true;
-            nombreJ1.IsEnabled = true;
-            nombreJ2.IsEnabled = true;
+            }            
             bEmpezar.Visibility = Visibility.Visible;
             sePuedeJugar = false;
             a1.IsEnabled = true;
@@ -359,13 +384,19 @@ namespace Gato
             empate.Visibility = Visibility.Hidden;
         }
 
+        //Esta funcion invoca a la funcion de volverAjugar y borra los puntos de los jugadores
         private void Reiniciar(object sender, RoutedEventArgs e)
         {
-            volverAjugar();          
+            volverAjugar();            
             j1.puntos = 0;
             j2.puntos = 0;
             puntos1.Text = j1.puntos.ToString();
             puntos2.Text = j2.puntos.ToString();
+            opciones.IsEnabled = true;
+            nombreJ1.IsEnabled = true;
+            nombreJ2.IsEnabled = true;
+            turnoRojo.Visibility= Visibility.Hidden;
+            turnoVerde.Visibility= Visibility.Hidden;
         }      
     }
 }

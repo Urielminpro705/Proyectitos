@@ -47,3 +47,4 @@ C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a e
 C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\Gato\Gato\obj\Debug\Gato.exe
 C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\Gato\Gato\obj\Debug\Gato.pdb
 C:\Users\uriel\Documents\Urielito\Escuela\Uni\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\Gato\Gato\obj\Debug\App.baml
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\Gato\Gato\obj\Debug\App.baml

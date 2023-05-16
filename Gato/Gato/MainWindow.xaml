@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gato"
         mc:Ignorable="d"
-        Title="TicTacToe" Height="450" Width="850" MinHeight="450" MinWidth="850">
+        Title="TicTacToe" Height="500" Width="900" MinHeight="450" MinWidth="850">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Imagenes/fondo.png"/>
@@ -56,7 +56,8 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="/Imagenes/post7.png"/>
                     </Grid.Background>
-
+                    <Image Name="turnoVerde" Source="/Imagenes/TurnoVerde.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
+                    <Image Name="turnoRojo" Source="/Imagenes/TurnoRojo.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
                     <Image Name="ganaVerde" Source="/Imagenes/GanadorVerde.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
                     <Image Name="ganaRojo" Source="/Imagenes/GanadorRojo.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
                     <Image Name="empate" Source="/Imagenes/Empate.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
@@ -145,6 +146,8 @@
                             <ImageBrush ImageSource="/Imagenes/Boton3.png"/>
                         </Button.Background>
                     </Button>
+                    <Image Source="/Imagenes/FotoXD.jpg" Grid.Row="6" Margin="3"/>
+                    <TextBlock Text="100% hecho por Uriel Mata Castellanos" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="10" FontFamily="Bahnschrift Condensed"/>
                 </Grid>
             </Grid>
 

@@ -23,6 +23,55 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Imagenes/post7.png"/>
+                    </Grid.Background>
+                    <Image Source="/Imagenes/circulo.png" Margin="10" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <TextBlock Name="r1" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="JUGADOR 1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" TextAlignment="Center" FontSize="20" Grid.ColumnSpan="2"/>
+                    <Image Source="/Imagenes/Equis.png" Margin="10" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"/>
+                    <TextBlock Name="r2" Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" Text="JUGADOR 2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" TextAlignment="Center" FontSize="20" Grid.ColumnSpan="2"/>
+                    <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="PUNTOS" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" HorizontalAlignment="Center"/>
+                    <Border Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Name="puntos1"/>
+                    </Border>
+                    <Border Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Name="puntos2"/>
+                    </Border>
+                    <TextBlock Grid.Row="7" TextWrapping="Wrap" Text="PUNTOS" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" HorizontalAlignment="Center"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
         <Grid Grid.Column="0" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -69,7 +118,7 @@
                         <TextBox Name="nombreJ2" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Text="Jugador 2" BorderThickness="0" BorderBrush="Transparent" Margin="1" TextAlignment="Left"/>
                     </Border>
                     <Border Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
-                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Margin="1" TextAlignment="Center" Name="Ficha2" FontWeight="Bold" FontFamily="Berlin Sans FB Demi"/>
+                        <TextBlock VerticalAlignment="Bottom" TextWrapping="Wrap" Margin="1,0,1,5" TextAlignment="Center" Name="Ficha2" FontWeight="Bold" FontFamily="Berlin Sans FB Demi"/>
                     </Border>
                     <Border Grid.Row="1"  Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
                         <ComboBox Name="opciones" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1" BorderBrush="Transparent" BorderThickness="0" Background="White" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
@@ -127,7 +176,7 @@
             <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="3" Grid.Row="0" Grid.RowSpan="5"/>
             <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>
             <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="5"/>
-            
+
         </Grid>
     </Grid>
 </Window>

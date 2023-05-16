@@ -11,6 +11,7 @@ namespace Gato
         public String nombre;
         public int puntos;
         public int ficha;
+        public String fichaLetras;
 
         public Jugador() { }
     }

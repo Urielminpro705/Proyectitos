@@ -96,12 +96,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Imagenes\Post7.png" />
     <Resource Include="Imagenes\Boton.png" />
     <Resource Include="Imagenes\Boton2.png" />
     <Resource Include="Imagenes\Boton3.png" />
     <Resource Include="Imagenes\Boton4.png" />
     <Resource Include="Imagenes\Boton5.png" />
-    <Content Include="Imagenes\Circulo.png" />
     <Resource Include="Imagenes\fondo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\Post6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\circulo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Gato.exe" version="1.0.0.1" publicKeyToken="ef09f6b59606eb3c" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Gato" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Gato.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de Control de cuentas de usuario
+          Si quiere cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el
+          nodo requestedExecutionLevel por alguno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar la virtualización de archivos y del Registro para la
+         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Gato.exe" size="1784776">
+      <assemblyIdentity name="Gato" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>JY2PITsIfgWvMBYTNvNocU1l9mJ6qZ32yyNrqCYB4cU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Gato.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=PC_DE_URIEL\uriel" issuerKeyHash="e531c950cd8dd4712e7ca667cc2b22a0a956c1b5" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>MD5973iOQeHiviw1GoolA3UcyFoTfjoN/eH+kOFPJ6c=</DigestValue></Reference></SignedInfo><SignatureValue>hn/+ivM3A0NUd928MTHu00INvgTFhUPhAk7brdSCPWVRmrIAotrvvaK/lyYs0HcpDwIvoFMKn4qhuJ5xgk2zB8V/N2eD3vdhn7T7qJWvmhQ06KRMGX7YKgnM1MKOw/I0XZx5h0W8116ejZXcZhesEjWwAqm/m1lMVB9UXh2SdhQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>xxWrXqFs5P3SkVbCZ16bjSw++rkNeDIK1VnJXIk6DntQnyZePRanbV4EoQL+CLyFYF2b7C0QgkqnBvWk93Bbeq5zgaBWNlyTYkoyfqqlgc9eMxuJEGrQqlL3yobvvoiiu7ef99FSVXtGZoJuaanRR9JJgNrZm/0EpjVu1zzR1g0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="a7274fe190fee1fd0d3a7e135ac81c7503258a1a352cbee2e1418e78ef7d3e30" Description="" Url=""><as:assemblyIdentity name="Gato.exe" version="1.0.0.1" publicKeyToken="ef09f6b59606eb3c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=PC_DE_URIEL\uriel</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>CRQ05dykrAqC9iTjOl+sMCfaM/WimTEaVx1ChOW+iTs=</DigestValue></Reference></SignedInfo><SignatureValue>HUmJf1EaPcJgFQzUHPTcb3Xbh4ks8DWZ64d4niWCtbW2VUTlNR0HLN0fLWXiLArwB8bAJdoK29Em+Dk3SOfNYBMmSxJN+1PJlsqJuDFL4meiR+qAIgR7nlGB+JFAd+VyCdYNzqQHNWurlG71sQA5yaVJIZ4DpZLsDXlz/fqx6lg=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xxWrXqFs5P3SkVbCZ16bjSw++rkNeDIK1VnJXIk6DntQnyZePRanbV4EoQL+CLyFYF2b7C0QgkqnBvWk93Bbeq5zgaBWNlyTYkoyfqqlgc9eMxuJEGrQqlL3yobvvoiiu7ef99FSVXtGZoJuaanRR9JJgNrZm/0EpjVu1zzR1g0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB3TCCAUagAwIBAgIQQjdUhJzjZJRNyrX93IJ0kzANBgkqhkiG9w0BAQsFADAtMSswKQYDVQQDHiIAUABDAF8ARABFAF8AVQBSAEkARQBMAFwAdQByAGkAZQBsMB4XDTIzMDUxNjIxNTE0NFoXDTI0MDUxNjAzNTE0NFowLTErMCkGA1UEAx4iAFAAQwBfAEQARQBfAFUAUgBJAEUATABcAHUAcgBpAGUAbDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAxxWrXqFs5P3SkVbCZ16bjSw++rkNeDIK1VnJXIk6DntQnyZePRanbV4EoQL+CLyFYF2b7C0QgkqnBvWk93Bbeq5zgaBWNlyTYkoyfqqlgc9eMxuJEGrQqlL3yobvvoiiu7ef99FSVXtGZoJuaanRR9JJgNrZm/0EpjVu1zzR1g0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQB2LSSQsiodfuHB0P0j3fAljYQepmXtoINy3Ug4BsIVePFbXkJiX4yBKFnyvZeKTvXUrVEniUDPCd1g8ma66BhMiqW9YJE3Xt78a1V9SoBhMKMnj14qFNcJN0sA9FZEJwbv3OKhKkpUpOpWkVXRAucgQ72MxBC1See4Qy2qg2Sf1Q==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

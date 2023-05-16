@@ -20,6 +20,7 @@ namespace Gato
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Atributos del programa
         private String fichasLetras;
         private int ficha;
         private Boolean turnos=true;

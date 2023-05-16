@@ -96,7 +96,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Circulo.png" />
+    <Resource Include="Imagenes\Boton.png" />
+    <Resource Include="Imagenes\Boton2.png" />
+    <Resource Include="Imagenes\Boton3.png" />
+    <Resource Include="Imagenes\Boton4.png" />
+    <Resource Include="Imagenes\Boton5.png" />
+    <Content Include="Imagenes\Circulo.png" />
     <Resource Include="Imagenes\fondo.png" />
   </ItemGroup>
   <ItemGroup>

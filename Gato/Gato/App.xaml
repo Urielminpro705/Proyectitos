@@ -4,7 +4,11 @@
              xmlns:local="clr-namespace:Gato"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <Style TargetType="Window">
+            <Setter Property="Icon" Value="/Imagenes/Icono.png"/>
+        </Style>
+        
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>

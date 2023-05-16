@@ -116,5 +116,23 @@
   <ItemGroup>
     <Resource Include="Imagenes\circulo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\circulo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Equis2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\GanadorRojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\GanadorVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Empate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Icono.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

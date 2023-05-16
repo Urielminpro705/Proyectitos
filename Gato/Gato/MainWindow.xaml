@@ -56,18 +56,22 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="/Imagenes/post7.png"/>
                     </Grid.Background>
-                    <Image Source="/Imagenes/circulo.png" Margin="10" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
-                    <TextBlock Name="r1" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="JUGADOR 1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" TextAlignment="Center" FontSize="20" Grid.ColumnSpan="2"/>
-                    <Image Source="/Imagenes/Equis.png" Margin="10" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"/>
-                    <TextBlock Name="r2" Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" Text="JUGADOR 2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" TextAlignment="Center" FontSize="20" Grid.ColumnSpan="2"/>
-                    <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="PUNTOS" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" HorizontalAlignment="Center"/>
+
+                    <Image Name="ganaVerde" Source="/Imagenes/GanadorVerde.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
+                    <Image Name="ganaRojo" Source="/Imagenes/GanadorRojo.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
+                    <Image Name="empate" Source="/Imagenes/Empate.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
+                    <Image Source="/Imagenes/circulo2.png" Margin="10" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <TextBlock Name="r1" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="JUGADOR 1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Bahnschrift Condensed" TextAlignment="Center" FontSize="22" Grid.ColumnSpan="2"/>
+                    <Image Source="/Imagenes/Equis2.png" Margin="10" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"/>
+                    <TextBlock Name="r2" Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" Text="JUGADOR 2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Bahnschrift Condensed" TextAlignment="Center" FontSize="22" Grid.ColumnSpan="2"/>
+                    <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="PUNTOS" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Center" FontSize="15"/>
                     <Border Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
                         <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Name="puntos1"/>
                     </Border>
                     <Border Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
                         <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Name="puntos2"/>
                     </Border>
-                    <TextBlock Grid.Row="7" TextWrapping="Wrap" Text="PUNTOS" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="7" TextWrapping="Wrap" Text="PUNTOS" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Center" FontSize="15"/>
                 </Grid>
             </Grid>
         </Grid>
@@ -127,10 +131,10 @@
                         </ComboBox>
                     </Border>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="JUGADOR 1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Berlin Sans FB Demi"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="JUGADOR 2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Berlin Sans FB Demi"/>
-                    <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="FICHA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Berlin Sans FB Demi"/>
-                    <TextBlock Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" Text="FICHA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Berlin Sans FB Demi"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="JUGADOR 1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="JUGADOR 2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="FICHA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15"/>
+                    <TextBlock Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" Text="FICHA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15"/>
                     <Button Name="bEmpezar" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" BorderThickness="0" Click="Empezar" Style="{DynamicResource BotonEmpezar}">
                         <Button.Background>
                             <ImageBrush ImageSource="/Imagenes/Boton2.png"/>

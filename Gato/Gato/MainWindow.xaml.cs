@@ -211,6 +211,14 @@ namespace Gato
                         puntos1.Text = j1.puntos.ToString();
                         puntos2.Text = j2.puntos.ToString();
                         sePuedeJugar = false;
+                        if(j1.ficha == 1)
+                        {
+                            ganaVerde.Visibility= Visibility.Visible;
+                        }
+                        else
+                        {
+                            ganaRojo.Visibility= Visibility.Visible;
+                        }
                         bEmpezar.Visibility = Visibility.Visible;
                     }
                     else
@@ -223,6 +231,14 @@ namespace Gato
                             puntos1.Text = j1.puntos.ToString();
                             puntos2.Text = j2.puntos.ToString();
                             sePuedeJugar = false;
+                            if (j2.ficha == 1)
+                            {
+                                ganaVerde.Visibility = Visibility.Visible;
+                            }
+                            else
+                            {
+                                ganaRojo.Visibility = Visibility.Visible;
+                            }
                             bEmpezar.Visibility = Visibility.Visible;
                         }                      
                     }
@@ -235,6 +251,7 @@ namespace Gato
                 {
                     fin = true;
                     sePuedeJugar = false;
+                    empate.Visibility = Visibility.Visible;
                     bEmpezar.Visibility = Visibility.Visible;
                 }
             }
@@ -337,7 +354,9 @@ namespace Gato
             c3.IsEnabled = true;
             c3.Background = Brushes.Transparent;
             c3.Content = "";
-
+            ganaVerde.Visibility = Visibility.Hidden;
+            ganaRojo.Visibility = Visibility.Hidden;
+            empate.Visibility = Visibility.Hidden;
         }
 
         private void Reiniciar(object sender, RoutedEventArgs e)

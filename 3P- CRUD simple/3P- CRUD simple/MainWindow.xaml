@@ -7,23 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="414,37,0,0" TextWrapping="Wrap" Text="Crear usuarios" VerticalAlignment="Top"/>
-        <Button Content="Borrar usuario" HorizontalAlignment="Left" Margin="47,235,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
-        <Button Content="Alta usuario" HorizontalAlignment="Left" Margin="414,144,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="47,37,0,0" TextWrapping="Wrap" Text="Los usuarios" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="424,69,0,0" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="442,102,0,0" TextWrapping="Wrap" Text="Pwd" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="475,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Name="altaUsr"/>
-        <TextBox HorizontalAlignment="Left" Margin="475,101,0,0" VerticalAlignment="Top" Width="135" Name="contrasena"/>
-        <ListBox Margin="47,61,0,0" Name="lista" HorizontalAlignment="Left" Width="334" Height="160" VerticalAlignment="Top"/>
-        <Button Content="Actualizar" HorizontalAlignment="Left" Margin="175,235,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
-        <Canvas Name="modificar" Margin="406,201,169,44">
+
+        <Button Content="Actualizar" HorizontalAlignment="Left" Margin="175,235,0,0" VerticalAlignment="Top" Click="Button_Click_2" Name="actu" Visibility="Hidden"/>
+        <Canvas Name="modificar" Margin="400,263,175,22" Visibility="Visible">
             <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Modificar datos" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="15"/>
             <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Name="usuarioact" Canvas.Left="76" Canvas.Top="40"/>
             <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="contrasenaact" Canvas.Left="76" Canvas.Top="75"/>
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Center" Canvas.Left="25" Canvas.Top="41"/>
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Pwd" VerticalAlignment="Top" Canvas.Left="43" Canvas.Top="76"/>
             <Button Content="Guardar cambios" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_CLick_3" Canvas.Left="10" Canvas.Top="114"/>
+            <Button Content="Cancelar" Canvas.Left="147" Canvas.Top="114" HorizontalAlignment="Left" VerticalAlignment="Center" Click="cancelar"/>
+        </Canvas>
+        <Canvas HorizontalAlignment="Left" Height="263" Margin="10,0,0,0" VerticalAlignment="Top" Width="630" Name="opciones">
+            <TextBlock HorizontalAlignment="Left" Margin="414,37,0,0" TextWrapping="Wrap" Text="Crear usuarios" VerticalAlignment="Top"/>
+            <Button Content="Borrar usuario" HorizontalAlignment="Left" Margin="47,235,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+            <Button Content="Alta usuario" HorizontalAlignment="Left" Margin="414,144,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Left" Margin="47,37,0,0" TextWrapping="Wrap" Text="Los usuarios" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="424,69,0,0" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="442,102,0,0" TextWrapping="Wrap" Text="Pwd" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="475,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Name="altaUsr"/>
+            <TextBox HorizontalAlignment="Left" Margin="475,101,0,0" VerticalAlignment="Top" Width="135" Name="contrasena"/>
+            <ListBox Margin="47,61,0,0" Name="lista" HorizontalAlignment="Left" Width="334" Height="160" VerticalAlignment="Top" SelectionChanged="lista_SelectionChanged"/>
         </Canvas>
     </Grid>
 </Window>

@@ -31,6 +31,7 @@ namespace _3P__CRUD_simple
         {
             InitializeComponent();
             Mostrarusuarios();
+            ocultar();
         }
 
         private object[] indice = new object[100];
@@ -92,36 +93,9 @@ namespace _3P__CRUD_simple
             contrasena.Text = "";
         }
 
-        /*
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            actualizar laVentanaAct = new actualizar((int)losUsuarios.SelectedValue);
-            try
-            {
-                string consulta = "SELECT * FROM usuario WHERE ID=@elID";
-                SqlCommand elSQLCommando = new SqlCommand(consulta, conectateSQL);
-                SqlDataAdapter adaptadorSQL = new SqlDataAdapter(elSQLCommando);
-                using (adaptadorSQL)
-                {
-                    elSQLCommando.Parameters.AddWithValue("@elID", losUsuarios.SelectedValue);
-                    DataTable tablaUsuarios = new DataTable();
-                    adaptadorSQL.Fill(tablaUsuarios);
-                    laVentanaAct.usuarioact.Text = tablaUsuarios.Rows[0]["usr"].ToString();
-                    laVentanaAct.contrasenaact.Text = tablaUsuarios.Rows[0]["contra"].ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            laVentanaAct.ShowDialog();
-            Mostrarusuarios();
-        }
-        */
-
         private void Button_CLick_3(object sender, RoutedEventArgs e)
         {
-            int elIDOriginal = 0;
+            int elIDOriginal = (int)indice[lista.SelectedIndex];
             string consulta = "UPDATE usuario SET usr= @nombreusr," + " contra = @pwd WHERE ID = " + elIDOriginal;
             SqlCommand miComandoI = new SqlCommand(consulta, conectateSQL);
             conectateSQL.Open();
@@ -129,12 +103,17 @@ namespace _3P__CRUD_simple
             miComandoI.Parameters.AddWithValue("@pwd", contrasenaact.Text);
             miComandoI.ExecuteNonQuery();
             conectateSQL.Close();
+            opciones.IsEnabled = true;
+            ocultar();
+            Mostrarusuarios();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             try
             {
+                modificar.Visibility = Visibility.Visible;
+                opciones.IsEnabled = false;
                 string consulta = "SELECT usr, contra FROM usuario WHERE ID = @elID";
                 SqlCommand miComandoSQL = new SqlCommand(consulta, conectateSQL);
                 SqlDataAdapter adaptador = new SqlDataAdapter(miComandoSQL);
@@ -151,6 +130,38 @@ namespace _3P__CRUD_simple
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }           
+        }
+
+        private void lista_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(lista.SelectedIndex != -1)
+            {
+                actu.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                actu.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void cancelar(object sender, RoutedEventArgs e)
+        {
+            opciones.IsEnabled = true;
+            ocultar();
+        }
+
+        public void ocultar()
+        {
+            if (modificar.Visibility == Visibility.Visible)
+            {
+                modificar.Visibility = Visibility.Hidden;
+                usuarioact.Text = "";
+                contrasenaact.Text = "";
+            }
+            else
+            {
+                modificar.Visibility = Visibility.Visible;
             }
         }
     }

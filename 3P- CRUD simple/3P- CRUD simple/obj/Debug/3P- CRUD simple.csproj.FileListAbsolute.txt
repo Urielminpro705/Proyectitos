@@ -1,0 +1,16 @@
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\3P- CRUD simple.csproj.AssemblyReference.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\3P- CRUD simple.csproj.SuggestedBindingRedirects.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\MainWindow.g.cs
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\App.g.cs
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\3P- CRUD simple_MarkupCompile.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\3P- CRUD simple_MarkupCompile.lref
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\bin\Debug\3P- CRUD simple.exe.config
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\bin\Debug\3P- CRUD simple.exe
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\bin\Debug\3P- CRUD simple.pdb
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\MainWindow.baml
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\3P- CRUD simple.g.resources
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\_3P__CRUD_simple.Properties.Resources.resources
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\3P- CRUD simple.csproj.GenerateResource.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\3P- CRUD simple.csproj.CoreCompileInputs.cache
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\3P- CRUD simple.exe
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\3P- CRUD simple\3P- CRUD simple\obj\Debug\3P- CRUD simple.pdb

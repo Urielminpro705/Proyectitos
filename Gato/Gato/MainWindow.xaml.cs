@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,16 +27,20 @@ namespace Gato
         private String fichasLetras;
         private int ficha;
         private Boolean turnos=true;
-        private Boolean fin=true;
+        private Boolean fin=false;
         private Boolean sePuedeJugar=false;
         private int contador=0;      
         private int[,] cuadricula=new int[3,3];
         private Jugador j1 = new Jugador();
         private Jugador j2 = new Jugador();
-        
+        private int auxPuntos1 = 0;
+        private int auxPuntos2 = 0;
+        public SqlConnection conectateSQL = new SqlConnection("Data Source=DESKTOP-D3BA5M2\\SQLEXPRESS;Initial Catalog=Historial;Integrated Security=True");
+
         public MainWindow()
         {
             InitializeComponent();
+            MostrarJugadores();
         }
 
         //Funcion que se activa cada vez que se presiona un boton de la cuadricula
@@ -41,7 +48,7 @@ namespace Gato
         {
             Button boton = sender as Button;
             //Se comprueba si aun sigue el juego y si aun no se presionan todos los botones
-            if (contador < 9 && sePuedeJugar == true)
+            if (contador < 9 && sePuedeJugar == true && fin == false)
             {
                 //Este if le asigan datos a las variables necesarias dependiendo de quien sea el turno
                 if (turnos == true)
@@ -66,7 +73,6 @@ namespace Gato
                 {
                     turnoVerde.Visibility = Visibility.Visible;
                     turnoRojo.Visibility = Visibility.Hidden;
-
                     boton.Background = Brushes.OrangeRed;
                 }
                 boton.IsEnabled = false;
@@ -111,7 +117,7 @@ namespace Gato
                         break;
                 }                               
                 contador++;
-                fin=seAcabo();
+                fin = seAcabo();
                 turnos = !turnos;
             }
             
@@ -128,7 +134,7 @@ namespace Gato
             {
                 for (int j = 0; j < 2 && juntas < 3; j++)
                 {
-                    if (cuadricula[r, j] == cuadricula[r, j + 1])
+                    if (cuadricula[r, j] == cuadricula[r, j + 1] && cuadricula[r,j] != 0)
                     {
                         juntas++;
                         fichaComun = cuadricula[r, j];
@@ -150,7 +156,7 @@ namespace Gato
             {
                 for (int j = 0; j < 2 && juntas < 3; j++)
                 {
-                    if (cuadricula[j, r] == cuadricula[j+1, r])
+                    if (cuadricula[j, r] == cuadricula[j+1, r] && cuadricula[j, r] != 0)
                     {
                         juntas++;
                         fichaComun = cuadricula[j, r];
@@ -218,45 +224,51 @@ namespace Gato
                     if(fichaComun == j1.ficha)
                     {
                         fin = true;
-                        j1.puntos++;                                                                   
+                        j1.puntos = 1;
+                        j2.perdidas = 1;
+                        auxPuntos1++;
                         sePuedeJugar = false;
                         //Dependiendo de cual ficha tenga el jugador va a variar el mensaje de ganador
                         if(j1.ficha == 1)
                         {
                             ganaVerde.Visibility= Visibility.Visible;
-                            puntos1.Text = j1.puntos.ToString();
-                            puntos2.Text = j2.puntos.ToString();
+                            puntos1.Text = auxPuntos1.ToString();
+                            puntos2.Text = auxPuntos2.ToString();
                         }
                         else
                         {
-                            puntos1.Text = j2.puntos.ToString();
-                            puntos2.Text = j1.puntos.ToString();
+                            puntos1.Text = auxPuntos2.ToString();
+                            puntos2.Text = auxPuntos1.ToString();
                             ganaRojo.Visibility= Visibility.Visible;
                         }
                         bEmpezar.Visibility = Visibility.Visible;
+                        existeDB(j1);
+                        existeDB(j2);
                     }
                     else
                     {
                         if(fichaComun == j2.ficha)
                         {
                             fin = true;
-                            j2.puntos++;
-                            
-                            
+                            j2.puntos = 1;
+                            j1.perdidas = 1;
+                            auxPuntos2++;
                             sePuedeJugar = false;
                             if (j2.ficha == 1)
                             {
                                 ganaVerde.Visibility = Visibility.Visible;
-                                puntos1.Text = j2.puntos.ToString();
-                                puntos2.Text = j1.puntos.ToString();
+                                puntos1.Text = auxPuntos2.ToString();
+                                puntos2.Text = auxPuntos1.ToString();
                             }
                             else
                             {
-                                puntos1.Text = j1.puntos.ToString();
-                                puntos2.Text = j2.puntos.ToString();
+                                puntos1.Text = auxPuntos1.ToString();
+                                puntos2.Text = auxPuntos2.ToString();
                                 ganaRojo.Visibility = Visibility.Visible;
                             }
                             bEmpezar.Visibility = Visibility.Visible;
+                            existeDB(j1);
+                            existeDB(j2);
                         }                      
                     }                 
                 }
@@ -269,7 +281,11 @@ namespace Gato
                     fin = true;
                     sePuedeJugar = false;
                     empate.Visibility = Visibility.Visible;
-                    bEmpezar.Visibility = Visibility.Visible;
+                    bEmpezar.Visibility = Visibility.Visible;                   
+                    j1.empates = 1;
+                    j2.empates = 1;
+                    existeDB(j1);
+                    existeDB(j2);
                 }
             }
             //Se retorna fin, si fin es true significa que ya se acabó el juego
@@ -303,37 +319,53 @@ namespace Gato
         //Esta funcion se activa cuando se presiona el boton de empezar
         private void Empezar(object sender, RoutedEventArgs e)
         {
-            volverAjugar();          
-            //Se guardan los nombres
-            j1.nombre = nombreJ1.Text;
-            j2.nombre = nombreJ2.Text;           
-            if (opciones.SelectedIndex == 0)
-            {                           
-                r1.Text = j1.nombre;
-                r2.Text = j2.nombre;
-                turnoRojo.Visibility = Visibility.Hidden;
-                turnoVerde.Visibility= Visibility.Visible;
+            if(nombreJ1.Text == string.Empty || nombreJ2.Text == string.Empty)
+            {
+                MessageBox.Show("Crea un nombre de jugador");
             }
             else
             {
-                if (opciones.SelectedIndex == 1)
-                {                                  
-                    r1.Text = j2.nombre;
-                    r2.Text = j1.nombre;
-                    turnoVerde.Visibility = Visibility.Hidden;
-                    turnoRojo.Visibility = Visibility.Visible;
+                if (nombreJ1.Text == nombreJ2.Text)
+                {
+                    MessageBox.Show("No se pueden repetir nombres");
                 }
-            }
-            //Se activa el tablero
-            sePuedeJugar = true;
-            //Se activa muestra el boton de reiniciar
-            bReiniciar.Visibility = Visibility.Visible;
-            //Se esconde el boton de empezar
-            bEmpezar.Visibility = Visibility.Hidden;   
-            //Se deshabilitan las opciones
-            opciones.IsEnabled = false;
-            nombreJ1.IsEnabled = false;
-            nombreJ2.IsEnabled = false;
+                else
+                {
+                    volverAjugar();
+                    //Se guardan los nombres
+                    j1.nombre = nombreJ1.Text;
+                    j2.nombre = nombreJ2.Text;
+                    if (opciones.SelectedIndex == 0)
+                    {
+                        r1.Text = j1.nombre;
+                        r2.Text = j2.nombre;
+                        turnoRojo.Visibility = Visibility.Hidden;
+                        turnoVerde.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        if (opciones.SelectedIndex == 1)
+                        {
+                            r1.Text = j2.nombre;
+                            r2.Text = j1.nombre;
+                            turnoVerde.Visibility = Visibility.Hidden;
+                            turnoRojo.Visibility = Visibility.Visible;
+                        }
+                    }
+                    //Se activa el tablero
+                    sePuedeJugar = true;
+                    //Se activa muestra el boton de reiniciar
+                    bReiniciar.Visibility = Visibility.Visible;
+                    //Se esconde el boton de empezar
+                    bEmpezar.Visibility = Visibility.Hidden;
+                    //Se deshabilitan las opciones
+                    opciones.IsEnabled = false;
+                    nombreJ1.IsEnabled = false;
+                    nombreJ2.IsEnabled = false;
+                    listaJugadores.IsEnabled = false;
+                    listaJugadores2.IsEnabled = false;
+                }
+            }                      
         }
 
         //Esta funcion sirve para reiniciar muchos de los elementos a su estado original
@@ -383,19 +415,28 @@ namespace Gato
             ganaVerde.Visibility = Visibility.Hidden;
             ganaRojo.Visibility = Visibility.Hidden;
             empate.Visibility = Visibility.Hidden;
+            j1.puntos = 0;
+            j1.perdidas = 0;
+            j1.empates = 0;
+            j2.puntos = 0;
+            j2.perdidas = 0;
+            j2.empates = 0;
         }
 
         //Esta funcion invoca a la funcion de volverAjugar y borra los puntos de los jugadores
         private void Reiniciar(object sender, RoutedEventArgs e)
         {
             volverAjugar();            
-            j1.puntos = 0;
-            j2.puntos = 0;
-            puntos1.Text = j1.puntos.ToString();
-            puntos2.Text = j2.puntos.ToString();
+            MostrarJugadores();           
+            puntos1.Text = "0";
+            puntos2.Text = "0";
+            auxPuntos1 = 0;
+            auxPuntos2 = 0;
             opciones.IsEnabled = true;
             nombreJ1.IsEnabled = true;
             nombreJ2.IsEnabled = true;
+            listaJugadores.IsEnabled = true;
+            listaJugadores2.IsEnabled = true;
             turnoRojo.Visibility= Visibility.Hidden;
             turnoVerde.Visibility= Visibility.Hidden;
         }
@@ -403,8 +444,133 @@ namespace Gato
         private void irHistorial_Click(object sender, RoutedEventArgs e)
         {
             // Código para cerrar la ventana actual y abrir una nueva ventana
-            historial ventana = new historial(j1, j2); // Reemplaza "NuevaVentana" con el nombre real de tu ventana
+            historial ventana = new historial(j1, j2, conectateSQL); // Reemplaza "NuevaVentana" con el nombre real de tu ventana
             ventana.Show();
+        }
+        private void insertar(Jugador j)
+        {
+            string consulta = "INSERT INTO Registros (Jugador, victorias, derrotas, empates) VALUES (@Jugador, @victorias, @derrotas, @empates)";
+            SqlCommand miComandoI = new SqlCommand(consulta, conectateSQL);
+            conectateSQL.Open();
+            try
+            {               
+                miComandoI.Parameters.AddWithValue("@Jugador", j.nombre);
+                miComandoI.Parameters.AddWithValue("@victorias", j.puntos);
+                miComandoI.Parameters.AddWithValue("@derrotas", j.perdidas);
+                miComandoI.Parameters.AddWithValue("@empates", j.empates);
+                miComandoI.ExecuteNonQuery();               
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conectateSQL.Close();
+        }
+
+        public void MostrarJugadores()
+        {
+            listaJugadores.Items.Clear();
+            listaJugadores2.Items.Clear();
+            listaJugadores.Items.Add("Nuevo jugador");
+            listaJugadores2.Items.Add("Nuevo jugador");
+            string consulta = "SELECT * FROM Registros;";
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conectateSQL);
+            DataSet datos = new DataSet();
+            conectateSQL.Open();
+            adaptador.Fill(datos);
+            try
+            {
+                DataTable tabla = datos.Tables[0];
+                for (int i = 0; i < tabla.Rows.Count; i++)
+                {
+                    DataRow fila = tabla.Rows[i];
+                    listaJugadores.Items.Add(fila["Jugador"]);
+                    listaJugadores2.Items.Add(fila["Jugador"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            conectateSQL.Close();
+        }
+
+        private void actualizarPuntaje(Jugador j)
+        {
+            
+            try
+            {
+                string consulta = "UPDATE Registros SET victorias = victorias + @victorias, derrotas = derrotas + @derrotas, empates = empates + @empates WHERE Jugador = @Jugador";
+                SqlCommand miComandoI = new SqlCommand(consulta, conectateSQL);
+                conectateSQL.Open();
+                miComandoI.Parameters.AddWithValue("@Jugador", j.nombre);
+                miComandoI.Parameters.AddWithValue("@victorias", j.puntos);
+                miComandoI.Parameters.AddWithValue("@derrotas", j.perdidas);
+                miComandoI.Parameters.AddWithValue("@empates", j.empates);
+                miComandoI.ExecuteNonQuery();               
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conectateSQL.Close();
+        }
+
+        private void listaJugadores_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(listaJugadores.SelectedIndex == 0)
+            {
+                nombreJ1.Text = string.Empty;
+            }
+            else
+            {
+                nombreJ1.Text = (string)listaJugadores.SelectedItem;
+            }
+        }
+
+        private void listaJugadores2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listaJugadores2.SelectedIndex == 0)
+            {
+                nombreJ2.Text = string.Empty;
+            }
+            else
+            {
+                nombreJ2.Text = (string)listaJugadores2.SelectedItem;
+            }
+        }
+
+        private void existeDB(Jugador j)
+        {
+            Boolean existe = false;
+            try
+            {
+               
+                string consulta = "SELECT Jugador FROM Registros WHERE Jugador = '" + j.nombre + "'";
+                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conectateSQL);
+                DataSet datos = new DataSet();
+                conectateSQL.Open();
+                adaptador.Fill(datos);
+                if (datos.Tables[0].Rows.Count  > 0)
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conectateSQL.Close();
+            if (existe == true)
+            {
+                actualizarPuntaje(j);
+            }
+            else
+            {
+                insertar(j);
+            }
+            
         }
     }
 }

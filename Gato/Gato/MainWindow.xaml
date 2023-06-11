@@ -83,7 +83,7 @@
                         <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Name="puntos2"/>
                     </Border>
                     <TextBlock Grid.Row="7" TextWrapping="Wrap" Text="PUNTOS" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Center" FontSize="15"/>
-                    <Button Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Name="irHistorial" Click="irHistorial_Click"/>
+                    <Button Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Name="irHistorial" Click="irHistorial_Click" Visibility="Hidden"/>
                 </Grid>
             </Grid>
         </Grid>
@@ -104,7 +104,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="1" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
@@ -129,12 +129,33 @@
                     
                     <!--TextBox que lee el nombre del jugador 1-->
                     <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
-                        <TextBox Name="nombreJ1" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Text="Jugador 1" BorderThickness="0" BorderBrush="Transparent" Margin="1" TextAlignment="Left"/>
+                        <Canvas>
+                            <Grid Width="93.5" Height="24">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBox Name="nombreJ1" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" BorderThickness="0" BorderBrush="Transparent" Margin="1" TextAlignment="Left" Grid.Column="0"/>
+                                <ComboBox Grid.Column="1" BorderThickness="0" Margin="0,1,1,1" Name="listaJugadores" SelectedIndex = "0" SelectionChanged="listaJugadores_SelectionChanged"/>
+
+                            </Grid>
+                        </Canvas>
                     </Border>
                     
                     <!--TextBox que lee el nombre del jugador 2-->
                     <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
-                        <TextBox Name="nombreJ2" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Text="Jugador 2" BorderThickness="0" BorderBrush="Transparent" Margin="1" TextAlignment="Left"/>
+                        <Canvas>
+                            <Grid Width="154" Height="24">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBox Name="nombreJ2" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" BorderThickness="0" BorderBrush="Transparent" Margin="1" TextAlignment="Left"/>
+                                <ComboBox Grid.Column="1" BorderThickness="0" Margin="0,1,1,1" Name="listaJugadores2" SelectedIndex = "0" SelectionChanged="listaJugadores2_SelectionChanged"/>
+                            </Grid>
+                        </Canvas>
                     </Border>
                     
                     <!--TextBlock para mostrar la ficha del segundo jugador-->
@@ -205,9 +226,9 @@
             <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="4" Click="boton" Background="Transparent" BorderThickness="0" Name="c2" FontSize="80" Margin="8"/>
             <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="0" Click="boton" Background="Transparent" BorderThickness="0" Name="a3" FontSize="80" Margin="8"/>
             <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="2" Click="boton" Background="Transparent" BorderThickness="0" Name="b3" FontSize="80" Margin="8"/>
+            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="4" Click="boton" Background="Transparent" BorderThickness="0" Name="c3" FontSize="80" Margin="8"/>
             
             <!--Rectangulos para usarlo como las lineas dentro del cuadro del juego-->
-            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="4" Click="boton" Background="Transparent" BorderThickness="0" Name="c3" FontSize="80" Margin="8"/>
             <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5"/>
             <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="3" Grid.Row="0" Grid.RowSpan="5"/>
             <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>

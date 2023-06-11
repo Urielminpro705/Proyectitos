@@ -8,7 +8,7 @@ namespace Gato
 {
     public class Jugador
     {
-        public String nombre = null;
+        public String nombre = "";
         public int puntos = 0;
         public int perdidas = 0;
         public int empates = 0;

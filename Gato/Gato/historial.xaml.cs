@@ -24,17 +24,25 @@ namespace Gato
     {
         public Jugador j1 = new Jugador();
         public Jugador j2 = new Jugador();
-        public historial( Jugador j1, Jugador j2)
+        public SqlConnection conectateSQL;
+        public historial(Jugador j1, Jugador j2, SqlConnection conectateSQL)
         {
 
             InitializeComponent();
-            insertar();
+            this.conectateSQL = conectateSQL;
             this.j1 = j1;
             this.j2 = j2;
         }   
 
-        private SqlConnection conectateSQL = new SqlConnection("Data Source=DESKTOP-D3BA5M2\\uriel;Initial Catalog=Historial;Integrated Security=True");
-
+        public void testeo()
+        {
+            try
+            {
+                conectateSQL.Open();
+                MessageBox.Show("Vamooooo");
+            }
+            catch (Exception ex) { }
+        }
         public void Mostrarusuarios()
         {
             string consulta = "SELECT * FROM Registros;";
@@ -57,20 +65,6 @@ namespace Gato
             }
 
             conectateSQL.Close();
-        }
-
-        private void insertar()
-        {
-            string consulta = "INSERT INTO Registros (Jugador, victorias, derrotas, empates) VALUES (@Jugador, @victorias, @derrotas, @empates)";
-            SqlCommand miComandoI = new SqlCommand(consulta, conectateSQL);
-            conectateSQL.Open();
-            miComandoI.Parameters.AddWithValue("@Jugador", j1.nombre);
-            miComandoI.Parameters.AddWithValue("@victorias", j1.puntos);
-            miComandoI.Parameters.AddWithValue("@derrotas", j1.perdidas);
-            miComandoI.Parameters.AddWithValue("@empates", j1.empates);
-            miComandoI.ExecuteNonQuery();
-            conectateSQL.Close();
-            Mostrarusuarios();
         }
     }
 }

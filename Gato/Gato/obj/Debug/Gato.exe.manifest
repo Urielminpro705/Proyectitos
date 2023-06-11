@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Gato.exe" size="1849288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Gato.exe" size="1851848">
       <assemblyIdentity name="Gato" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lMrB50Gf//1bV9i1vh3iMbo1ek0/2OBgCnKD8jEe++Y=</dsig:DigestValue>
+        <dsig:DigestValue>tWagKjYj4ShyraDFJSgCHYkGQWhY/KGnBJ6QPTOp34M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

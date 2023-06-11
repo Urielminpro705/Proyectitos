@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gato"
         mc:Ignorable="d"
-        Title="TicTacToe" Height="500" Width="900" MinHeight="450" MinWidth="850">
+        Title="TicTacToe" Height="500" Width="900" MinHeight="450" MinWidth="850" Icon="Imagenes/Icono.png">
     <Grid>
         <!--Es el grid principal -->
         <!--El fondo del grid principal -->
@@ -52,8 +52,7 @@
                         <RowDefinition Height="25"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-
-                    
+                                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -84,6 +83,7 @@
                         <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Name="puntos2"/>
                     </Border>
                     <TextBlock Grid.Row="7" TextWrapping="Wrap" Text="PUNTOS" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Center" FontSize="15"/>
+                    <Button Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Name="irHistorial" Click="irHistorial_Click"/>
                 </Grid>
             </Grid>
         </Grid>

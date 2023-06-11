@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace Gato
 {
-    internal class Jugador
+    public class Jugador
     {
-        public String nombre;
-        public int puntos;
-        public int ficha;
+        public String nombre = null;
+        public int puntos = 0;
+        public int perdidas = 0;
+        public int empates = 0;
+        public int ficha = 0;
         public String fichaLetras;
 
-        public Jugador() { }
+        public Jugador() {
+            
+        }
     }
 }

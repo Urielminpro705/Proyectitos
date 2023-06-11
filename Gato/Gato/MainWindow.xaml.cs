@@ -398,6 +398,13 @@ namespace Gato
             nombreJ2.IsEnabled = true;
             turnoRojo.Visibility= Visibility.Hidden;
             turnoVerde.Visibility= Visibility.Hidden;
-        }      
+        }
+
+        private void irHistorial_Click(object sender, RoutedEventArgs e)
+        {
+            // Código para cerrar la ventana actual y abrir una nueva ventana
+            historial ventana = new historial(j1, j2); // Reemplaza "NuevaVentana" con el nombre real de tu ventana
+            ventana.Show();
+        }
     }
 }

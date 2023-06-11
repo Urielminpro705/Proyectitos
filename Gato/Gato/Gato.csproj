@@ -83,6 +83,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="historial.xaml.cs">
+      <DependentUpon>historial.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,11 +94,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="HistorialDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HistorialDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Jugador.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="historial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -116,6 +128,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Gato_TemporaryKey.pfx" />
+    <None Include="HistorialDataSet.xsc">
+      <DependentUpon>HistorialDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HistorialDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HistorialDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HistorialDataSet.xss">
+      <DependentUpon>HistorialDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,6 +161,7 @@
     <Resource Include="Imagenes\Equis.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Imagenes\Post8.png" />
     <Resource Include="Imagenes\Titulo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +205,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Post8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\sinSombra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\borrar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

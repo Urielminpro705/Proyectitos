@@ -1,0 +1,243 @@
+﻿<Window x:Class="Gato.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gato"
+        mc:Ignorable="d"
+        Title="TicTacToe" Height="500" Width="900" MinHeight="450" MinWidth="850" Icon="Imagenes/Icono.png">
+    <Grid>
+        <!--Es el grid principal -->
+        <!--El fondo del grid principal -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagenes/fondo.png"/>
+        </Grid.Background>
+        <!--Se definene las columnas -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Se definen filas-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Se crea otro grid dentro de la ultima columna del grid general-->
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--Se crea un grid dentro de otro-->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Se crea otro grid dentro de un grid-->
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--Fondo del grid-->
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Imagenes/post7.png"/>
+                    </Grid.Background>
+                    
+                    <!--Creo varias imagenes que van a indicar turnos y ganadores, las cuales, se ocultan cuando no se necesitan-->
+                    <Image Name="turnoVerde" Source="/Imagenes/TurnoVerde.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
+                    <Image Name="turnoRojo" Source="/Imagenes/TurnoRojo.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
+                    <Image Name="ganaVerde" Source="/Imagenes/GanadorVerde.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
+                    <Image Name="ganaRojo" Source="/Imagenes/GanadorRojo.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
+                    <Image Name="empate" Source="/Imagenes/Empate.png" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,3,0" Visibility="Hidden"/>
+                    <Image Source="/Imagenes/circulo2.png" Margin="10" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <!--Se crean los textblocks con los nombres de los jugadores y dos que digan "Puntos"-->
+                    <TextBlock Name="r1" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="JUGADOR 1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Bahnschrift Condensed" TextAlignment="Center" FontSize="22" Grid.ColumnSpan="2"/>
+                    <Image Source="/Imagenes/Equis2.png" Margin="10" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"/>
+                    <TextBlock Name="r2" Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" Text="JUGADOR 2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontWeight="Bold" FontFamily="Bahnschrift Condensed" TextAlignment="Center" FontSize="22" Grid.ColumnSpan="2"/>
+                    <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="PUNTOS" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Center" FontSize="15"/>
+                    <!--Meti todos los textBlocks en borders para que se vean mejor-->
+                    <Border Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Name="puntos1"/>
+                    </Border>
+                    <Border Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Name="puntos2"/>
+                    </Border>
+                    <TextBlock Grid.Row="7" TextWrapping="Wrap" Text="PUNTOS" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Center" FontSize="15"/>
+                    <Button Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Name="irHistorial" Click="irHistorial_Click" Visibility="Visible" Margin="0,15,4,15" BorderThickness="0" Style="{DynamicResource azul}" Content="HISTORIAL" Foreground="white" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="20">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Imagenes/editar.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!--Se crea otro grid-->
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Imagenes/Titulo.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="0"/>
+
+            <!--Se crea un grid dentro de otro-->
+            <Grid Grid.Column="0" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Imagen de fondo del grid del menu-->
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Imagenes/Post6.png"/>
+                    </Grid.Background>
+                    
+                    <!--TextBox que lee el nombre del jugador 1-->
+                    <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <Canvas>
+                            <Grid Width="93.5" Height="24">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBox Name="nombreJ1" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" BorderThickness="0" BorderBrush="Transparent" Margin="1" TextAlignment="Left" Grid.Column="0"/>
+                                <ComboBox Grid.Column="1" BorderThickness="0" Margin="0,1,1,1" Name="listaJugadores" SelectedIndex = "0" SelectionChanged="listaJugadores_SelectionChanged"/>
+
+                            </Grid>
+                        </Canvas>
+                    </Border>
+                    
+                    <!--TextBox que lee el nombre del jugador 2-->
+                    <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <Canvas>
+                            <Grid Width="154" Height="24">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBox Name="nombreJ2" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" BorderThickness="0" BorderBrush="Transparent" Margin="1" TextAlignment="Left"/>
+                                <ComboBox Grid.Column="1" BorderThickness="0" Margin="0,1,1,1" Name="listaJugadores2" SelectedIndex = "0" SelectionChanged="listaJugadores2_SelectionChanged"/>
+                            </Grid>
+                        </Canvas>
+                    </Border>
+                    
+                    <!--TextBlock para mostrar la ficha del segundo jugador-->
+                    <Border Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <TextBlock VerticalAlignment="Bottom" TextWrapping="Wrap" Margin="1,0,1,5" TextAlignment="Center" Name="Ficha2" FontWeight="Bold" FontFamily="Berlin Sans FB Demi"/>
+                    </Border>
+                    
+                    <!--ComboBox para escoger la ficha del primer jugador-->
+                    <Border Grid.Row="1"  Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,0,10,0" BorderThickness="3" BorderBrush="SlateGray" CornerRadius="5" Background="White">
+                        <ComboBox Name="opciones" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1" BorderBrush="Transparent" BorderThickness="0" Background="White" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
+                            <ComboBoxItem Content="O" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Name="laX"/>
+                            <ComboBoxItem Content="X" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Name="El0"/>
+                        </ComboBox>
+                    </Border>
+
+                    <!--TextBlocks para mostrar los titulos de las diferentes opciones-->
+                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="JUGADOR 1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="JUGADOR 2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="FICHA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15"/>
+                    <TextBlock Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" Text="FICHA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,0" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15"/>
+                    
+                    <!--Boton para empezar el juego-->
+                    <Button Name="bEmpezar" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" BorderThickness="0" Click="Empezar" Style="{DynamicResource BotonEmpezar}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Imagenes/Boton2.png"/>
+                        </Button.Background>
+                    </Button>
+                    
+                    <!--Boton para reiniciar el juego-->
+                    <Button Name="bReiniciar" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" BorderThickness="0" Click="Reiniciar" Visibility="Visible" Style="{DynamicResource BotonReiniciar}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Imagenes/Boton3.png"/>
+                        </Button.Background>
+                    </Button>
+                    
+                    <!--Imagen mia UWU y TextBlock con mi nombre-->
+                    <Image Source="/Imagenes/FotoXD.jpg" Grid.Row="6" Margin="3"/>
+                    <TextBlock Text="100% hecho por Uriel Mata Castellanos" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="10" FontFamily="Bahnschrift Condensed"/>
+                </Grid>
+            </Grid>
+
+        </Grid>
+        
+        <!--Se crea el grid para la tabla del juego con 5 filas y 5 columnas dos columnas y filas para las lineas del cuadro y el resto para los botones-->
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Creo todos los botones haciendolos invisibles y pongo un nombre de cordenada a cada uno, para despues poderlos mapear dentro de un arreglo-->
+            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Click="boton" Background="Transparent" BorderThickness="0" Name="a1" FontSize="80" Margin="8"/>
+            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Grid.Column="2" Click="boton" Background="Transparent" BorderThickness="0" Name="b1" FontSize="80" Margin="8"/>
+            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Grid.Column="4" Click="boton" Background="Transparent" BorderThickness="0" Name="c1" FontSize="80" Margin="8"/>
+            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="0" Click="boton" Background="Transparent" BorderThickness="0" Name="a2" FontSize="80" Margin="8"/>
+            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="2" Click="boton" Background="Transparent" BorderThickness="0" Name="b2" FontSize="80" Margin="8"/>
+            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.Column="4" Click="boton" Background="Transparent" BorderThickness="0" Name="c2" FontSize="80" Margin="8"/>
+            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="0" Click="boton" Background="Transparent" BorderThickness="0" Name="a3" FontSize="80" Margin="8"/>
+            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="2" Click="boton" Background="Transparent" BorderThickness="0" Name="b3" FontSize="80" Margin="8"/>
+            <Button Style="{DynamicResource BotonCuadricula}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="4" Click="boton" Background="Transparent" BorderThickness="0" Name="c3" FontSize="80" Margin="8"/>
+            
+            <!--Rectangulos para usarlo como las lineas dentro del cuadro del juego-->
+            <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5"/>
+            <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="3" Grid.Row="0" Grid.RowSpan="5"/>
+            <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>
+            <Rectangle HorizontalAlignment="Stretch" Stroke="SlateGray" Fill="SlateGray"  VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="5"/>
+
+        </Grid>
+    </Grid>
+</Window>

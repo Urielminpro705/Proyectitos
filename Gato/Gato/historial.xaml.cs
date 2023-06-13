@@ -113,53 +113,16 @@ namespace Gato
             }
         }
 
-        /*
-        private void actualizarDatos_Click(object sender, RoutedEventArgs e)
+        private void lista_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int elIDOriginal = (int)indice[lista.SelectedIndex];
-            string consulta = "UPDATE Registros SET Jugador = @j WHERE Jugador = " + elIDOriginal;
-            SqlCommand miComandoI = new SqlCommand(consulta, conectateSQL);
-            conectateSQL.Open();
-            miComandoI.Parameters.AddWithValue("@nombreusr", usuarioact.Text);
-            miComandoI.Parameters.AddWithValue("@pwd", contrasenaact.Text);
-            miComandoI.ExecuteNonQuery();
-            conectateSQL.Close();
-            opciones.IsEnabled = true;
-            ocultar();
-            Mostrarusuarios();
-        }
-
-        private void existeDB()
-        {
-            Boolean existe = false;
-            try
+            if (lista.SelectedIndex != -1)
             {
-
-                string consulta = "SELECT Jugador FROM Registros WHERE Jugador = '" + j.nombre + "'";
-                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conectateSQL);
-                DataSet datos = new DataSet();
-                conectateSQL.Open();
-                adaptador.Fill(datos);
-                if (datos.Tables[0].Rows.Count > 0)
-                {
-                    existe = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            conectateSQL.Close();
-            if (existe == true)
-            {
-                actualizarPuntaje(j);
+                borrarUnDato.Visibility = Visibility.Visible;
             }
             else
             {
-                insertar(j);
+                borrarUnDato.Visibility = Visibility.Hidden;
             }
-
         }
-        */
     }   
 }

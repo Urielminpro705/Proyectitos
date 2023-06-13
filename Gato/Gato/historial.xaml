@@ -53,12 +53,12 @@
                         <ImageBrush ImageSource="imagenes/borrar.png"/>
                     </Button.Background>
                 </Button>
-                <Button Grid.Column="3" Grid.Row="1" Content="Actualizar" BorderThickness="0" Name="actualizarDatos" Foreground="white" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15" Style="{DynamicResource azul}">
+                <Button Grid.Column="3" Grid.Row="1" Content="Actualizar" BorderThickness="0" Name="actualizarDatos" Foreground="white" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15" Style="{DynamicResource azul}" Visibility="Hidden">
                     <Button.Background>
                         <ImageBrush ImageSource="imagenes/editar.png"/>
                     </Button.Background>
                 </Button>
-                <Button Grid.Column="5" Grid.Row="1" Content="Eliminar usuario" BorderThickness="0" Name="borrarUnDato" Click="borrarUnDato_Click" Style="{DynamicResource rojo}" Foreground="white" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15">
+                <Button Grid.Column="5" Grid.Row="1" Content="Eliminar usuario" BorderThickness="0" Name="borrarUnDato" Click="borrarUnDato_Click" Style="{DynamicResource rojo}" Foreground="white" FontWeight="Bold" FontFamily="Bahnschrift Condensed" FontSize="15" Visibility="Hidden">
                     <Button.Background>
                         <ImageBrush ImageSource="imagenes/borrar.png"/>
                     </Button.Background>
@@ -81,7 +81,7 @@
                 <DataGrid Grid.Column="3" Grid.Row="1" Name="lol"/>
                     
                 -->
-                <ListView Grid.Row="0" Margin="12,10,18,10" Width="500" BorderThickness="0" Name="lista" Grid.ColumnSpan="2">
+                <ListView Grid.Row="0" Margin="12,10,18,10" Width="500" BorderThickness="0" Name="lista" Grid.ColumnSpan="2" SelectionChanged="lista_SelectionChanged">
                     <ListView.Background>
                         <ImageBrush ImageSource="Imagenes/sinSombra.png"/>
                     </ListView.Background>

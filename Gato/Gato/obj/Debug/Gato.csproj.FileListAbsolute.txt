@@ -58,3 +58,5 @@ C:\Users\uriel\Documents\Urielito\Escuela\Uni\Segundo semestre\Segundo parcial\P
 C:\Users\uriel\Documents\Urielito\Escuela\Uni\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\Gato\Gato\obj\Debug\Gato.application
 C:\Users\uriel\Documents\Urielito\Escuela\Uni\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\Gato\Gato\obj\Debug\historial.g.cs
 C:\Users\uriel\Documents\Urielito\Escuela\Uni\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\Gato\Gato\obj\Debug\historial.baml
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\Gato\Gato\obj\Debug\historial.g.cs
+C:\Uriel\Universidad\Segundo semestre\Segundo parcial\Programacion orientada a entornos visuales\Programas\Gato\Gato\obj\Debug\historial.baml
